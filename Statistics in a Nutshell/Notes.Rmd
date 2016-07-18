@@ -3,12 +3,8 @@ title: "Statistics in a Nutshell Notes"
 author: "Scott Brenstuhl"
 output: html_document
 ---
-```{r}
-library(htmlTable)
-library(knitr)
-```
 
-## Basic Concepts
+## Ch1: Basic Concepts
 
 ### Types of Data
 
@@ -18,19 +14,19 @@ meaning.
 - Binary data: Can only be true or false.
     
 Ordinal data: Data that has a meaningful order, but their is no metric that acts
-as a scale to quantify the distance between catagories. It is appropriate to 
+as a scale to quantify the distance between categories. It is appropriate to 
 calculate the medium but not the mean.
 
-Interval data: Has meaningful order and equal intervals between measurments
+Interval data: Has meaningful order and equal intervals between measurements
 represent equal change, but has no natural zero point. These are rare 
-(Fahrenheit is the common example). Multiplication and devision are not 
+(Fahrenheit is the common example). Multiplication and division are not 
 appropriate.
 
 Ratio data: Has natural order, equal intervals, and a natural zero point. This
-includes many physical measurments (height, weight, age). 
+includes many physical measurements (height, weight, age). 
 
-Continuous data: Can take any value within a range. Aka measurments can be 
-percise such as fractions of an inch, adding days and hours to your age etc.
+Continuous data: Can take any value within a range. Aka measurements can be 
+precise such as fractions of an inch, adding days and hours to your age etc.
 
 Discrete data: Can only take on particular values, such as anything that is 
 being counted. Nominal, binary, and rand ordered data are all discrete.
@@ -43,18 +39,18 @@ True and Error Scores:
 > X(measurment) = T(true score) + E(error)
 
 Random error: Due to chance, no particular pattern and will cancel itself out
-over repeted measure. Must be unrelated to the true score and correlation 
+over repeated measure. Must be unrelated to the true score and correlation 
 between errors must be zero.
 
-Systematic error: Has an observable pattern not due to chance, and offten has
+Systematic error: Has an observable pattern not due to chance, and often has
 a cause that can be identified and remedied.
 
 ### Reliability
 
-Reliability: How consistent or repeatable measurments are.
+Reliability: How consistent or repeatable measurements are.
 
-Multiple-occasion reliability: How similarly a test or scale perfoems over 
-repeted testings.
+Multiple-occasion reliability: How similarly a test or scale performs over 
+repeated testings.
 
 Multiple-forms reliability: How similarly different version of a test perform in
 measuring the same entity.
@@ -62,8 +58,8 @@ measuring the same entity.
 Internal consistency reliability: How much the items on a test are measuring the
 same thing.
 
-Measures of agreement: Appopriate for judging consistency when measurment 
-problems have categorical judgements (such as true/false).
+Measures of agreement: Appropriate for judging consistency when measurement 
+problems have categorical judgement (such as true/false).
 
 Percent agreement (The simplest measure of agreement): 
 
@@ -84,22 +80,93 @@ kappa_table
 
 > P~0~ = (a + d)/(a + b + c + d)
 
-> x = ((a + c) * (a + b)) / (a + b + c + d)
-> y = ((d + c) * (d + b)) / (a + b + c + d)
+> x = ((a + c) * (a + b)) / (a + b + c + d) </br>
+> y = ((d + c) * (d + b)) / (a + b + c + d) </br>
 > P~e~ = (x + y) / (a + b + c + d)
 
-Kappa has a range of 0-1 with 0 being if observed agrement is the same as 
+Kappa has a range of 0-1 with 0 being if observed agreement is the same as 
 random agreement and 1 is all cases are in agreement:
 
-< 0 Poor
-0 - .2 Slight
-.21 - .4 Fair
-.41 - .6 Moderate
-.61 - .8 Substantial
-.81 - 1 Almost perfect
+< 0 Poor </br>
+0 - .2 Slight </br>
+.21 - .4 Fair </br>
+.41 - .6 Moderate </br>
+.61 - .8 Substantial </br>
+.81 - 1 Almost perfect 
+
+### Validity
+
+Content validity: How well the process of measurement reflects the important
+parts of what you are measuring.
+
+Face validity: Appears to be a fair assessment of the qualities being studied to 
+those being studied.
+
+Concurrent validity: How well a measure can be used to predict another measure
+that is taken simultaneously.
+
+Predictive validity: How well a measure can be used to draw inference about an
+event in the future.
+
+### Bias
+
+Selection bias: Exists if some potential subjects are more likely than others
+to be selected for the sample.
+
+Volunteer bias: People who volunteer for a study are usually not representative
+of a population as a whole.
+
+Non response bias: Those who decline to participate when invited to likely differ
+from those that do participate.
+
+Loss to follow up: When participants drop out over time but not at random.
+
+Interviewer bias: When the data collected is altered by the attitude or behavior
+of the person performing the interview.
+
+Recall bias: Different life experiences will cause people to remember events
+more or less clearly. For example if someone is seriously injured they will
+think more about the events leading up to the incident than an average person
+would think about that time frame.
+
+Detection bias: Some charicteristics may be more likely to be detected or 
+reported than others.
+
+Social desirability bias: Responses influenced by people's desire to present 
+themselves in a desirable light.
 
 
-```{r, echo=FALSE}
+## Exercises
+
+### Problem 1
+
+Percent Agreement:
+```{r}
+# (Both possitive + both negative )/ all observations
+Pa <- (70 + 25) / 140
+Pa
+```
+
+kappa:
+
+```{r}
+# Observed Agreement - Expected Agreement / 1 - Expected
+x <- ((70 + 30) * (70 + 15)) / (70 + 15 + 30 + 25)
+y <- ((25 + 30) * (25 + 15)) / (70 + 15 + 30 + 25)
+Pe <- (x + y) / (70 + 15 + 30 + 25)
+
+k <- (Pa - Pe) / (1 - Pe)
+k
 
 ```
+
+
+
+
+
+
+
+
+
+
 
