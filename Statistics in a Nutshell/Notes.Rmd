@@ -161,6 +161,51 @@ k
 ```
 
 
+## Ch2: Probability
+
+### Basic Definitions
+
+Trials/Experements/Observations: An event whose outcome is unknown.
+
+Sample Space(_S_): The set of all possible elementary outcomes.
+
+Event(_A capitol letter other than S_): The outcome of a trial.
+
+- Simple event: The outcome of a single observation or coin toss.
+
+- Compound event: Combinations of simple observations.
+
+Union(E∪F): Either E or F, or both E and F.
+
+Intersection(E∩F): E and F only.
+
+Complement(~E): Everything that is not E.
+
+Independence: The outcome of one event has no relationship to the outcome of 
+another.
+
+Permutation(xPy): All the possible ways elements in a set can be arranged. The 
+order of the elements is important in permutations.
+
+> n = size of set </br>
+> k = size of subsets </br>
+> nPk = n! / (n - k)!
+
+_R: n! is calculated with factoral(n)_
+
+Combinations(xCy): All the possible combinations of elements. The order of the 
+elements does not matter.
+
+> nCk = nPk / k!
+
+
+
+
+
+
+
+
+
 
 
 
