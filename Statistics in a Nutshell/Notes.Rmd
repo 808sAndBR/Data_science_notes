@@ -198,13 +198,28 @@ elements does not matter.
 
 > nCk = nPk / k!
 
+### Probabilities of Multiple events
+
+Union of mutually exclusive events:
+
+> P(E∪F) = P(E) + P(F)
+
+Union of events that are not mutually exclusive:
+
+> P(E∪F) = P(E) + P(F) - P(E∩F)
+
+Intersection of independent events (probablility of all events occuring):
+
+> P(E∩F) = P(E) * P(E)
+
+Intersection of nonindependent events (we need their conditional probablities):
+
+> P(E∩F) = P(E) * P(F|E)
 
 
 
 
-
-
-
+  
 
 
 
